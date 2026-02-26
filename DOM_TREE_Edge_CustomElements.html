@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Elements Test</title>
+  <script>
+    class MyElement extends HTMLElement {
+      constructor() {
+        super();
+        this.innerHTML = "<div>Inside Custom Element</div>";
+      }
+    }
+    customElements.define("my-element", MyElement);
+  </script>
+</head>
+<body>
+
+<h2>Custom Elements</h2>
+
+<my-element></my-element>
+
+</body>
+</html>
