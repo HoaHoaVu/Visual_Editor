@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML Element Coverage Demo</title>
+  <meta charset="utf-8">
+  <base href="/" />
+  <link rel="stylesheet" href="#">
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    section { border: 1px solid #ccc; margin: 10px 0; padding: 10px; }
+    my-element { display: block; padding: 6px; border: 1px dashed #999; margin: 6px 0; }
+  </style>
+
+  <script>
+    window["my_variable_gtag"] = function () {
+      return "myuserid";
+    };
+
+    /* Custom Element with Shadow DOM */
+    class MyElement extends HTMLElement {
+      constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: "open" });
+        shadow.innerHTML = `
+          <div>
+            Shadow DOM Content
+            <button>Shadow Button</button>
+          </div>
+        `;
+      }
+    }
+    customElements.define("my-element", MyElement);
+  </script>
+
+  <noscript>JavaScript Disabled</noscript>
+</head>
+
+<body>
+
+<header>
+  <hgroup>
+    <h1>Main Heading</h1>
+    <h2>Sub Heading</h2>
+    <h3> Heading 3 </h3>
+    <h4>Heading 4 </h4>
+    <h5>Heading  5 </h5>
+    <h6>Heading  6 </h6>
+  </hgroup>
+  <nav>
+    <a href="#">Navigation Link</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Grouping / Text -->
+  <section>
+    <h3>Text & Grouping</h3>
+    <div>
+      <p>This is a <span>span</span> inside a paragraph.</p>
+      <blockquote>A blockquote example</blockquote>
+      <pre><code>const example = true;</code></pre>
+      <figure>
+        <img src="https://via.placeholder.com/100">
+        <figcaption>Image Caption</figcaption>
+      </figure>
+      <hr>
+      Line break here<br>Next line
+    </div>
+  </section>
+
+  <!-- Text formatting -->
+  <section>
+    <h3>Text Formatting</h3>
+    <p>
+      <strong>Strong</strong>
+      <b>Bold</b>
+      <em>Emphasis</em>
+      <i>Italic</i>
+      <u>Underline</u>
+      <s>Strike</s>
+      <del>Deleted</del>
+      <ins>Inserted</ins>
+      <mark>Mark</mark>
+      <small>Small</small>
+      H<sub>2</sub>O
+      X<sup>2</sup>
+      <abbr title="HyperText">HTML</abbr>
+      <cite>Source</cite>
+      <q>Inline Quote</q>
+      <dfn>Definition</dfn>
+      <time datetime="2026-01-01">Time</time>
+      <var>variable</var>
+      <samp>output</samp>
+      <kbd>Ctrl</kbd>
+      word<wbr>break
+      <bdi>BDI</bdi>
+      <bdo dir="rtl">BDO</bdo>
+    </p>
+
+    <ruby>
+      漢 <rt>Kan</rt> <rp>(</rp> <rt>ji</rt> <rp>)</rp>
+    </ruby>
+  </section>
+
+  <!-- Lists -->
+  <section>
+    <h3>Lists</h3>
+    <ul><li>UL Item</li></ul>
+    <ol><li>OL Item</li></ol>
+    <dl>
+      <dt>Term</dt>
+      <dd>Description</dd>
+    </dl>
+    <menu><li>Menu Item</li></menu>
+  </section>
+
+  <!-- Table -->
+  <section>
+    <h3>Table</h3>
+    <table border="1">
+      <caption>Table Caption</caption>
+      <colgroup><col></colgroup>
+      <thead><tr><th>Header</th></tr></thead>
+      <tbody><tr><td>Cell</td></tr></tbody>
+      <tfoot><tr><td>Footer</td></tr></tfoot>
+    </table>
+  </section>
+
+  <!-- Forms -->
+  <section>
+    <h3>Forms</h3>
+    <form>
+      <fieldset>
+        <legend>Legend</legend>
+        <label>Input <input type="text" list="suggestions"></label>
+        <datalist id="suggestions">
+          <option value="Option 1">
+        </datalist>
+        <textarea>Textarea</textarea>
+        <select>
+          <optgroup label="Group">
+            <option>Option</option>
+          </optgroup>
+        </select>
+        <button type="button">Button</button>
+        <output>Output</output>
+        <progress value="50" max="100"></progress>
+        <meter value="0.6">60%</meter>
+      </fieldset>
+    </form>
+  </section>
+
+  <!-- Media -->
+  <section>
+    <h3>Media</h3>
+    <picture>
+      <source srcset="https://via.placeholder.com/50">
+      <img src="https://via.placeholder.com/50">
+    </picture>
+
+    <audio controls>
+      <source src="#">
+    </audio>
+
+    <video width="120" controls>
+      <source src="#">
+      <track kind="subtitles">
+    </video>
+
+    <canvas width="100" height="50"></canvas>
+
+    <svg width="50" height="50">
+      <circle cx="25" cy="25" r="20"></circle>
+    </svg>
+
+    <map name="test-map">
+      <area shape="rect" coords="0,0,50,50" href="#">
+    </map>
+  </section>
+
+  <!-- Embedded -->
+  <section>
+    <h3>Embedded Content</h3>
+    <iframe src="about:blank"></iframe>
+    <embed src="#">
+    <object data="#">
+      <param name="test" value="123">
+    </object>
+    <portal src="about:blank"></portal>
+  </section>
+
+  <!-- Interactive -->
+  <section>
+    <h3>Interactive</h3>
+    <details>
+      <summary>Summary</summary>
+      Hidden details content
+    </details>
+
+    <dialog open>Dialog Content</dialog>
+  </section>
+
+  <!-- Template / Slot -->
+  <section>
+    <h3>Template</h3>
+    <template id="template-test">
+      <div>Template Content</div>
+    </template>
+    <slot>Slot Placeholder</slot>
+  </section>
+
+  <!-- Semantic -->
+  <section>
+    <h3>Semantic</h3>
+    <article>Article</article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+    <address>Address</address>
+    <search>
+      <input type="search" placeholder="Search">
+    </search>
+    <data value="123">Data Element</data>
+  </section>
+
+  <!-- ✅ EDGE CASES FOR DOM TREE TESTING -->
+
+  <section>
+    <h3>Custom Elements / Shadow DOM</h3>
+    <my-element></my-element>
+  </section>
+
+  <section>
+    <h3>Text / Comment Nodes</h3>
+    Plain text node before comment
+    <!-- Comment node for DOM testing -->
+    <div>Element after text & comment</div>
+  </section>
+
+  <section>
+    <h3>MathML Elements</h3>
+    <math>
+      <mi>x</mi>
+      <mo>=</mo>
+      <mn>10</mn>
+    </math>
+  </section>
+
+  <section>
+    <h3>Template / Document Fragment</h3>
+    <template id="edge-template">
+      <div>Hidden Template Content</div>
+    </template>
+  </section>
+
+  <section>
+    <h3>Iframe DOM Context</h3>
+    <iframe srcdoc="<div>Iframe Inner DOM</div>"></iframe>
+  </section>
+
+</main>
+
+<script>
+  console.log("DOM Ready");
+</script>
+
+</body>
+</html>
