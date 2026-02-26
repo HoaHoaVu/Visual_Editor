@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shadow DOM Test</title>
+  <script>
+    class ShadowHost extends HTMLElement {
+      constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: "open" });
+        shadow.innerHTML = `
+          <div>
+            Shadow Content
+            <button>Shadow Button</button>
+          </div>
+        `;
+      }
+    }
+    customElements.define("shadow-host", ShadowHost);
+  </script>
+</head>
+<body>
+
+<h2>Shadow DOM</h2>
+
+<shadow-host></shadow-host>
+
+</body>
+</html>
