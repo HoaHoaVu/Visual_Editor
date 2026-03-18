@@ -90,18 +90,69 @@
     </ruby>
   </section>
 
-  <!-- Lists -->
-  <section>
-    <h3>Lists</h3>
-    <ul><li>UL Item</li></ul>
-    <ol><li>OL Item</li></ol>
-    <dl>
-      <dt>Term</dt>
-      <dd>Description</dd>
-    </dl>
-    <menu><li>Menu Item</li></menu>
-  </section>
+<!-- Lists -->
+<section>
+  <h3>Lists</h3>
 
+  <!-- UL -->
+  <ul>
+    <li>
+      <span>Text inside span</span>
+    </li>
+
+    <li>
+      <div>
+        <p>Paragraph inside div inside li</p>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">
+        <strong>Clickable strong text inside link</strong>
+      </a>
+    </li>
+
+    <li>
+      <div>
+        <ul>
+          <li>
+            <em>Nested list item (deep level)</em>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li>
+      <picture>
+        <img src="test.jpg" alt="Test image">
+      </picture>
+    </li>
+  </ul>
+
+  <!-- OL -->
+  <ol>
+    <li>
+      <button>Button inside li</button>
+    </li>
+  </ol>
+
+  <!-- MENU -->
+  <menu>
+    <li>
+      <div>
+        <span>Menu item with nested span</span>
+      </div>
+    </li>
+  </menu>
+
+  <!-- DL (no li here, for control case) -->
+  <dl>
+    <dt>Term</dt>
+    <dd>
+      <span>Description span (no li parent)</span>
+    </dd>
+  </dl>
+</section>
   <!-- Table -->
   <section>
     <h3>Table</h3>
